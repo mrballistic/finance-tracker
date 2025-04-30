@@ -9,7 +9,16 @@ interface SummaryCardProps {
 
 const SummaryCard: React.FC<SummaryCardProps> = ({ title, value, color }) => {
   return (
-    <Card sx={{ minWidth: 200, backgroundColor: color || "white" }}>
+    <Card
+      sx={{
+        minWidth: 200,
+        backgroundColor: color || "white",
+        color: (theme) =>
+          theme.palette.getContrastText(color || theme.palette.background.paper),
+      }}
+      role="region"
+      aria-label={title}
+    >
       <CardContent>
         <Typography variant="h6" component="div" gutterBottom>
           {title}
