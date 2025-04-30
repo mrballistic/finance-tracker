@@ -27,9 +27,41 @@ export const ExpenseProvider: React.FC<ExpenseProviderProps> = ({ children }) =>
 
   const fetchExpenses = async () => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/data/expenses.json`);
-      const data = await response.json();
-      setExpenses(data.expenses);
+      // Try multiple possible paths to handle both development and GitHub Pages
+      const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+      
+      // List of possible paths to try
+      const paths = [
+        `/data/expenses.json`,
+        `${basePath}/data/expenses.json`,
+        `/finance-tracker/data/expenses.json`
+      ];
+      
+      let data;
+      let foundData = false;
+      
+      // Try each path until we get data
+      for (const path of paths) {
+        try {
+          console.log(`Trying to fetch from: ${path}`);
+          const response = await fetch(path);
+          if (response.ok) {
+            data = await response.json();
+            console.log(`Successfully loaded data from: ${path}`);
+            foundData = true;
+            break;
+          }
+        } catch (pathError) {
+          console.log(`Failed to fetch from path: ${path}`);
+        }
+      }
+      
+      // If we found data, use it
+      if (foundData && data) {
+        setExpenses(data.expenses);
+      } else {
+        console.error("Could not load expense data from any path");
+      }
     } catch (error) {
       console.error("Error fetching expense data:", error);
     }
