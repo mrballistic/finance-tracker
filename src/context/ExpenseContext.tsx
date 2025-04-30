@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import React, { createContext, useContext, ReactNode } from "react";
 import { Expense } from "../components/expenses/ExpenseForm";
 
 interface ExpenseContextType {
@@ -23,7 +23,20 @@ interface ExpenseProviderProps {
 }
 
 export const ExpenseProvider: React.FC<ExpenseProviderProps> = ({ children }) => {
-  const [expenses, setExpenses] = useState<Expense[]>([]);
+  const [expenses, setExpenses] = React.useState<Expense[]>([]);
+
+  React.useEffect(() => {
+    fetch("/data/expenses.json")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data && data.expenses) {
+          setExpenses(data.expenses);
+        }
+      })
+      .catch((err) => {
+        console.error("Failed to load expenses data:", err);
+      });
+  }, []);
 
   const addExpense = (expense: Expense) => {
     setExpenses((prev) => [...prev, expense]);

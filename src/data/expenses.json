@@ -1,0 +1,100 @@
+{
+  "expenses": [
+    {
+      "id": "1",
+      "amount": 120.50,
+      "category": "Utilities",
+      "subcategory": "Electricity",
+      "date": "2023-03-15",
+      "recurrence": "monthly",
+      "notes": "Higher than usual due to AC usage"
+    },
+    {
+      "id": "2",
+      "amount": 75.00,
+      "category": "Groceries",
+      "subcategory": "Supermarket",
+      "date": "2023-03-10",
+      "recurrence": "weekly",
+      "notes": "Weekly grocery shopping"
+    },
+    {
+      "id": "3",
+      "amount": 50.00,
+      "category": "Entertainment",
+      "subcategory": "Movies",
+      "date": "2023-03-20",
+      "notes": "Movie night"
+    },
+    {
+      "id": "4",
+      "amount": 100.00,
+      "category": "Transportation",
+      "subcategory": "Gas",
+      "date": "2023-03-05",
+      "recurrence": "monthly",
+      "notes": "Fuel for car"
+    },
+    {
+      "id": "5",
+      "amount": 130.00,
+      "category": "Utilities",
+      "subcategory": "Internet",
+      "date": "2023-04-15",
+      "recurrence": "monthly",
+      "notes": "Monthly internet bill"
+    },
+    {
+      "id": "6",
+      "amount": 80.00,
+      "category": "Groceries",
+      "subcategory": "Supermarket",
+      "date": "2023-04-12",
+      "recurrence": "weekly",
+      "notes": "Weekly grocery shopping"
+    },
+    {
+      "id": "7",
+      "amount": 60.00,
+      "category": "Entertainment",
+      "subcategory": "Concert",
+      "date": "2023-04-22",
+      "notes": "Concert tickets"
+    },
+    {
+      "id": "8",
+      "amount": 110.00,
+      "category": "Transportation",
+      "subcategory": "Gas",
+      "date": "2023-04-07",
+      "recurrence": "monthly",
+      "notes": "Fuel for car"
+    }
+  ],
+  "categories": [
+    {
+      "id": "cat-1",
+      "name": "Utilities",
+      "color": "#4287f5",
+      "subcategories": ["Electricity", "Water", "Internet", "Gas"]
+    },
+    {
+      "id": "cat-2",
+      "name": "Groceries",
+      "color": "#f54242",
+      "subcategories": ["Supermarket", "Farmers Market", "Online"]
+    },
+    {
+      "id": "cat-3",
+      "name": "Entertainment",
+      "color": "#42f554",
+      "subcategories": ["Movies", "Concert", "Games"]
+    },
+    {
+      "id": "cat-4",
+      "name": "Transportation",
+      "color": "#f5a142",
+      "subcategories": ["Gas", "Public Transit", "Taxi"]
+    }
+  ]
+}

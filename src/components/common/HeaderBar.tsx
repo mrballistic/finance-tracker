@@ -16,7 +16,7 @@ const HeaderBar: React.FC = () => {
     <AppBar position="static" color="primary" sx={{ marginBottom: 2 }}>
       <Toolbar>
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
-          Finance Tracker
+        💸 Finance Tracker
         </Typography>
         <Button
           color="inherit"

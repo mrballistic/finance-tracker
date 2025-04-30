@@ -31,11 +31,28 @@ const SummaryCard: React.FC<SummaryCardProps> = ({ title, value, color }) => {
   );
 };
 
+import { useExpenseContext } from "../../context/ExpenseContext";
+import { useMemo } from "react";
+
 const SummaryCards: React.FC = () => {
-  // Placeholder values for now
-  const totalExpenses = "$1,200.00";
-  const monthlyBudget = "$2,000.00";
-  const upcomingBills = "$300.00";
+  const { expenses } = useExpenseContext();
+
+  // Calculate total expenses
+  const totalExpenses = useMemo(() => {
+    return expenses.reduce((sum, exp) => sum + exp.amount, 0).toFixed(2);
+  }, [expenses]);
+
+  // Placeholder monthly budget (could be user input later)
+  const monthlyBudget = "2000.00";
+
+  // Calculate upcoming bills (expenses with future dates)
+  const upcomingBills = useMemo(() => {
+    const now = new Date();
+    return expenses
+      .filter((exp) => new Date(exp.date) > now)
+      .reduce((sum, exp) => sum + exp.amount, 0)
+      .toFixed(2);
+  }, [expenses]);
 
   return (
     <Box
@@ -47,13 +64,13 @@ const SummaryCards: React.FC = () => {
       }}
     >
       <Box sx={{ flex: "1 1 30%" }}>
-        <SummaryCard title="Total Expenses" value={totalExpenses} color="#f8bbd0" />
+        <SummaryCard title="Total Expenses" value={`$${totalExpenses}`} color="#f8bbd0" />
       </Box>
       <Box sx={{ flex: "1 1 30%" }}>
-        <SummaryCard title="Monthly Budget" value={monthlyBudget} color="#bbdefb" />
+        <SummaryCard title="Monthly Budget" value={`$${monthlyBudget}`} color="#bbdefb" />
       </Box>
       <Box sx={{ flex: "1 1 30%" }}>
-        <SummaryCard title="Upcoming Bills" value={upcomingBills} color="#c8e6c9" />
+        <SummaryCard title="Upcoming Bills" value={`$${upcomingBills}`} color="#c8e6c9" />
       </Box>
     </Box>
   );
