@@ -3,11 +3,6 @@
 import React from "react";
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, Legend, CartesianGrid } from "recharts";
 
-interface ExpenseData {
-  category: string;
-  amount: number;
-}
-
 interface ExpenseChartProps {
   expenses: Expense[];
 }

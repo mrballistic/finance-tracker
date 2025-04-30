@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { AppBar, Toolbar, Typography, Button } from "@mui/material";
 import { useRouter, usePathname } from "next/navigation";
 
