@@ -25,17 +25,18 @@ interface ExpenseProviderProps {
 export const ExpenseProvider: React.FC<ExpenseProviderProps> = ({ children }) => {
   const [expenses, setExpenses] = React.useState<Expense[]>([]);
 
+  const fetchExpenses = async () => {
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/data/expenses.json`);
+      const data = await response.json();
+      setExpenses(data.expenses);
+    } catch (error) {
+      console.error("Error fetching expense data:", error);
+    }
+  };
+
   React.useEffect(() => {
-    fetch("/data/expenses.json")
-      .then((res) => res.json())
-      .then((data) => {
-        if (data && data.expenses) {
-          setExpenses(data.expenses);
-        }
-      })
-      .catch((err) => {
-        console.error("Failed to load expenses data:", err);
-      });
+    fetchExpenses();
   }, []);
 
   const addExpense = (expense: Expense) => {
