@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💰 Personal Finance Tracker
 
-## Getting Started
+Track your expenses, visualize spending patterns, and predict future bills with this intuitive and extensible personal finance application built with React, Next.js, and Material-UI.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- 🏦 Dashboard with spending summary cards
+- 📊 Interactive charts for expense visualization
+- 📝 Expense entry and management interface
+- 🔍 Filtering and searching of expenses
+- 📅 Date range and category filters
+- 📈 Basic prediction of upcoming bills and trends
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- React with Next.js (TypeScript)
+- Material-UI (MUI) for UI components
+- Recharts for data visualization
+- Simple-Statistics for basic trend analysis
+- Local JSON data storage (initially)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🏗️ Getting Started
 
-## Learn More
+1. Clone the repository
+2. Install dependencies with `npm install`
+3. Run the development server with `npm run dev`
+4. Open [http://localhost:3000](http://localhost:3000) to view the app
 
-To learn more about Next.js, take a look at the following resources:
+## 📂 Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `src/components` - React components organized by feature
+- `src/app` - Next.js app directory with pages and layouts
+- `src/data` - Sample JSON data files
+- `src/hooks` - Custom React hooks
+- `src/lib` - Utility functions and helpers
+- `src/types` - TypeScript type definitions
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🌟 Future Enhancements
 
-## Deploy on Vercel
+- Backend data persistence and cloud sync
+- Budget setting and alerts
+- Receipt scanning and OCR integration
+- Multi-currency support
+- Dark/light theme toggle
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🤝 Contributing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Contributions are welcome! Please open issues or submit pull requests.
+
+## 📄 License
+
+MIT License
