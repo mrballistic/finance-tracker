@@ -51,7 +51,7 @@ export const ExpenseProvider: React.FC<ExpenseProviderProps> = ({ children }) =>
             foundData = true;
             break;
           }
-        } catch (pathError) {
+        } catch {
           console.log(`Failed to fetch from path: ${path}`);
         }
       }
