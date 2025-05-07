@@ -16,6 +16,10 @@ A single-user personal finance tracking application designed to track expenses, 
 - **State Management:** React Context API or Redux Toolkit (to be decided)
 - **Data Storage:** Local JSON file initially, with potential future use of localStorage or IndexedDB for persistence
 
+## Code Quality Tools
+- **ESLint:** Comprehensive TypeScript and React linting rules as documented in lint-rules.md
+- **TypeScript:** Strict type checking for improved code quality and developer experience
+
 ## Project Initialization
 - Created with `npx create-next-app@latest finance-tracker --typescript`
 - Installed dependencies:
